@@ -1,0 +1,3 @@
+.<%= api.method.toLowerCase() %>(`/galaxy<%=api.query_path.path.replace(/\{/g,":").replace(/\}/g,'') %>`, async (ctx, next) => { 
+	<%- mockCode %> ctx.body = <%- mockData %> 
+})
