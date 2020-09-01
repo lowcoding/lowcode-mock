@@ -56,6 +56,6 @@ const options = {
 // 		)
 // 	})
 app.listen(3000)
-console.log('Now start API server on port ' + 3000 + '...')
+console.log('start mock server on port ' + 3000 + '...')
 
 export default app
