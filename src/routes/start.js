@@ -13,6 +13,10 @@ router
 		delay(3)
 		ctx.body = 'delay'
 	})
+	.get('/httpError', (ctx) => {
+		ctx.status = 401
+		ctx.body = 'http 401'
+	})
 	.get('/mock', (ctx) => {
 		const list2 = []
 		for (let i = 0; i < 10; i++) {
