@@ -28,9 +28,9 @@ export const proxyList = [
 
 > `@setsuna/lowcode-mock` 默认支持跨域，前端项目中也可不配置代理，直接请求 `@setsuna/lowcode-mock` 起的服务即可。
 
-### mock yapi
+### mock
 
-使用 [yapi-code](https://marketplace.visualstudio.com/items?itemName=wjkang.yapi-code) 插件
+使用vscode插件 [yapi-code](https://marketplace.visualstudio.com/items?itemName=wjkang.yapi-code) ，可直接根据 JSON 数据或者 YAPI 接口定义自动生成 mock 接口以及 mock 数据。
 
 ### 延时
 
