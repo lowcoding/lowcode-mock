@@ -2,12 +2,10 @@ import Koa2 from 'koa'
 import KoaBody from 'koa-body'
 import cors from 'koa2-cors'
 import Routes from './routes/index'
-import ErrorRoutesCatch from './middleware/ErrorRoutesCatch'
 const https = require('https')
 const fs = require('fs')
 
 const app = new Koa2()
-const env = process.env.NODE_ENV || 'development' // Current mode
 
 app.use(
 	cors({
@@ -17,21 +15,18 @@ app.use(
 		credentials: true,
 	})
 )
-if (env === 'development') {
-	// logger
-	app.use((ctx, next) => {
-		const start = new Date()
-		return next().then(() => {
-			const ms = new Date() - start
-			console.log(
-				`${ctx.method} ${decodeURI(ctx.url)} - ${ms}ms data:${JSON.stringify(
-					ctx.request.body
-				)}`
-			)
-		})
+app.use((ctx, next) => {
+	const start = new Date()
+	return next().then(() => {
+		const ms = new Date() - start
+		console.log(
+			`${ctx.method} ${decodeURI(ctx.url)} - ${ms}ms data:${JSON.stringify(
+				ctx.request.body
+			)}`
+		)
 	})
-}
-app.use(ErrorRoutesCatch()).use(
+})
+app.use(
 	KoaBody({
 		multipart: true,
 		jsonLimit: '10mb',
