@@ -1,7 +1,7 @@
 const request = require('superagent')
 const url = require('url')
 
-export default async function (ctx, host, referer = 'http://www.baidu.com') {
+export default async function (ctx, host, referer = 'https://blog.bu6.io/') {
 	let hostObj = url.parse(host)
 	let result = {}
 	try {

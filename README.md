@@ -288,12 +288,12 @@ router.get('/httpError', (ctx) => {
 ### 代理
 
 ```js
-router.get('/proxy', proxy('https://www.baidu.com/'), (ctx) => {
-	ctx.body = 'https://www.baidu.com/'
+router.get('/proxy', proxy('https://blog.bu6.io/'), (ctx) => {
+	ctx.body = 'https://blog.bu6.io/'
 })
 ```
 
-> 来自 `/proxy` 的请求转发到 `https://www.baidu.com/proxy` ，用于后端接口可联调的时候跳过本地 mock，转发请求到后端接口。
+> 来自 `/proxy` 的请求转发到 `https://blog.bu6.io/proxy` ，用于后端接口可联调的时候跳过本地 mock，转发请求到后端接口。
 
 ```js
 router.all(

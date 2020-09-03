@@ -28,8 +28,8 @@ router
 		}
 		ctx.body = { name: Random.cword(5, 7), city: list1 }
 	})
-	.get('/proxy', proxy('https://www.baidu.com/'), (ctx) => {
-		ctx.body = 'https://www.baidu.com/'
+	.get('/proxy', proxy('https://blog.bu6.io'), (ctx) => {
+		ctx.body = 'https://blog.bu6.io/'
 	})
 	.all(
 		new RegExp('^/galaxy/api/bms/(|^$)'),
