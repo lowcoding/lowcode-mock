@@ -184,6 +184,80 @@ const json = {
 	})
 ```
 
+访问 mock 接口即可拿到如下类似数据：
+
+```json
+{
+	"code": 200,
+	"message": "这是一条精确的mock",
+	"result": {
+		"list": [
+			{
+				"code": "八别因教者活",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": true
+			},
+			{
+				"code": "毛着何工时白",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": false
+			},
+			{
+				"code": "县称县单下外",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": true
+			},
+			{
+				"code": "面养号加事",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": true
+			},
+			{
+				"code": "干但天大能去",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": false
+			},
+			{
+				"code": "指任经二办",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": false
+			},
+			{
+				"code": "革天制中况把",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": true
+			},
+			{
+				"code": "深红习种定",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": true
+			},
+			{
+				"code": "常群高象收史",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": true
+			},
+			{
+				"code": "月京育团使",
+				"name": "模糊匹配后生成的mock",
+				"icon": "http://dummyimage.com/48x48",
+				"actived": true
+			}
+		],
+		"total": 200
+	}
+}
+```
+
 ### 延时
 
 ```js
