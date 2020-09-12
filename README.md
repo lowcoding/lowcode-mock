@@ -4,7 +4,7 @@
 
 ### install
 
-`yarn create @lowcode/mock`
+`yarn create @lowcoding/mock`
 
 ### start
 
