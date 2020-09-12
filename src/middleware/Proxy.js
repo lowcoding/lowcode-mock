@@ -1,6 +1,6 @@
 const request = require('superagent')
 const url = require('url')
-module.exports = (host, referer = 'https://blog.bu6.io/') => {
+module.exports = (host, referer = 'https://github.com/wjkang/lowcode-mock') => {
 	let hostObj = url.parse(host)
 	return async function (ctx) {
 		let result = {}

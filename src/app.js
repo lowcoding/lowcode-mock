@@ -1,9 +1,11 @@
 import Koa2 from 'koa'
+import KoaRouter from 'koa-router'
 import KoaBody from 'koa-body'
 import cors from 'koa2-cors'
 import Routes from './routes/index'
 const https = require('https')
 const fs = require('fs')
+import proxy from './middleware/Proxy'
 
 const app = new Koa2()
 
@@ -19,11 +21,7 @@ app.use((ctx, next) => {
 	const start = new Date()
 	return next().then(() => {
 		const ms = new Date() - start
-		console.log(
-			`${ctx.method} ${decodeURI(ctx.url)} - ${ms}ms data:${JSON.stringify(
-				ctx.request.body
-			)}`
-		)
+		console.log(`${ctx.method} ${decodeURI(ctx.url)} - ${ms}ms data:${JSON.stringify(ctx.request.body)}`)
 	})
 })
 app.use(
@@ -37,6 +35,11 @@ app.use(
 Object.keys(Routes).forEach(function (key) {
 	app.use(Routes[key].routes()).use(Routes[key].allowedMethods())
 })
+
+const router = new KoaRouter()
+router.all(new RegExp('^/lowcode/mock/(|^$)'), proxy('https://github.com/wjkang/lowcode-mock'))
+app.use(router.routes()).use(router.allowedMethods())
+
 const options = {
 	key: fs.readFileSync('./src/ca-key.pem'),
 	cert: fs.readFileSync('./src/ca-cert.pem'),

@@ -7,7 +7,7 @@ let Random = Mock.Random
 const router = new KoaRouter()
 router
 	.get('/', (ctx) => {
-		ctx.body = '@setsuna/lowcode-mock'
+		ctx.body = 'lowcode-mock'
 	})
 	.get('/delay', (ctx) => {
 		delay(3)
@@ -28,11 +28,11 @@ router
 		}
 		ctx.body = { name: Random.cword(5, 7), city: list1 }
 	})
-	.get('/proxy', proxy('https://blog.bu6.io'), (ctx) => {
-		ctx.body = 'https://blog.bu6.io/'
+	.get('/proxy', proxy('https://github.com/wjkang/lowcode-mock'), (ctx) => {
+		ctx.body = 'https://github.com/wjkang/lowcode-mock'
 	})
 	.all(
-		new RegExp('^/galaxy/api/bms/(|^$)'),
-		proxy('https://galaxy-sit.4009515151.com')
+		new RegExp('^/lowcode/mock/(|^$)'),
+		proxy('https://github.com/wjkang/lowcode-mock')
 	)
 module.exports = router

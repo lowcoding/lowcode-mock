@@ -1,5 +1,5 @@
 {
-	"name": "@setsuna/lowcode-mock",
+	"name": "lowcode-mock",
 	"version": "1.0.0",
 	"description": "",
 	"author": "",
@@ -9,6 +9,8 @@
 		"build": "babel src -d dist",
 		"production": "cross-env NODE_ENV=production node dist/app.js"
 	},
+	"repository": "https://github.com/wjkang/lowcode-mock",
+	"homepage": "https://github.com/wjkang/lowcode-mock",
 	"dependencies": {
 		"atomic-sleep": "^1.0.0",
 		"koa": "^2.13.0",
@@ -30,5 +32,19 @@
 		"cross-env": "^7.0.2",
 		"gulp": "^4.0.2",
 		"gulp-nodemon": "^2.5.0"
-	}
+	},
+	"yapi-code.mockKeyWordLike": {
+		"icon": "Random.image('48x48')",
+		"img": "Random.image('48x48')",
+		"image": "Random.image('48x48')",
+		"name": "Random.cword(5, 6)",
+		"code": "Random.word(5, 6)"
+	},
+	"yapi-code.mockKeyWordEqual": {
+		"total": 200,
+		"code": "200&&number"
+	},
+	"yapi-code.mockString": "Random.cword(5, 6)",
+	"yapi-code.mockBoolean": "Random.boolean()",
+	"yapi-code.mockNumber": "Random.natural(100,1000)"
 }
