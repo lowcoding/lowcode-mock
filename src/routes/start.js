@@ -1,5 +1,6 @@
 import KoaRouter from 'koa-router'
 import proxy from '../middleware/Proxy'
+import request from '../lib/proxy'
 import { delay } from '../lib/util'
 let Mock = require('mockjs')
 let Random = Mock.Random
@@ -28,11 +29,16 @@ router
 		}
 		ctx.body = { name: Random.cword(5, 7), city: list1 }
 	})
+	.get('/intercept/response', async (ctx) => {
+		const result = await request(ctx, 'http://localhost:3000/mock')
+		const interceptResult = {
+			...result.body,
+			intercept: '拦截相应',
+		}
+		ctx.body = interceptResult
+	})
 	.get('/proxy', proxy('https://github.com/wjkang/lowcode-mock'), (ctx) => {
 		ctx.body = 'https://github.com/wjkang/lowcode-mock'
 	})
-	.all(
-		new RegExp('^/lowcode/mock/(|^$)'),
-		proxy('https://github.com/wjkang/lowcode-mock')
-	)
+	.all(new RegExp('^/lowcode/mock/(|^$)'), proxy('https://github.com/wjkang/lowcode-mock'))
 module.exports = router
