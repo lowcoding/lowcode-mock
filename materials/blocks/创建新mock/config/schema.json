@@ -1,1 +1,17 @@
-{}
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "新路由",
+      "type": "string",
+      "description": "",
+      "default": "",
+      "placeholder": "输入新路由名称",
+      "props": {
+        "allowClear": false
+      }
+    }
+  },
+  "labelWidth": 120,
+  "displayType": "row"
+}

@@ -1,0 +1,46 @@
+{
+  "yapi": {
+    "domain": "",
+    "projects": []
+  },
+  "mock": {
+    "mockNumber": "Random.natural(100,1000)",
+    "mockBoolean": "Random.boolean()",
+    "mockString": "Random.cword(5, 6)",
+    "mockKeyWordEqual": [
+      {
+        "key": "total",
+        "value": 200
+      },
+      {
+        "key": "code",
+        "value": "200&&number"
+      }
+    ],
+    "mockKeyWordLike": [
+      {
+        "key": "icon",
+        "value": "Random.image('48x48')"
+      },
+      {
+        "key": "img",
+        "value": "Random.image('48x48')"
+      },
+      {
+        "key": "image",
+        "value": "Random.image('48x48')"
+      },
+      {
+        "key": "name",
+        "value": "Random.cword(5, 6)"
+      },
+      {
+        "key": "code",
+        "value": "Random.word(5, 6)"
+      }
+    ]
+  },
+  "commonlyUsedBlock": [
+    "创建新mock"
+  ]
+}

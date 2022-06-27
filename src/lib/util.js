@@ -1,4 +1,5 @@
-import sleep from 'atomic-sleep'
+import sleep from 'atomic-sleep';
+
 export function delay(seconds) {
-	sleep(seconds * 1000)
+  sleep(seconds * 1000);
 }
